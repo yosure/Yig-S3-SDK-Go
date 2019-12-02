@@ -7,6 +7,7 @@ import (
 
 func ListBucketsSample() {
 	DeleteTestBucketAndObject()
+	defer DeleteTestBucketAndObject()
 	sc := s3lib.NewS3(endpoint, accessKey, secretKey)
 	myBuckets := []string{
 		"yig-my-bucket-1",
@@ -37,6 +38,6 @@ func ListBucketsSample() {
 			HandleError(err)
 		}
 	}
-	DeleteTestBucketAndObject()
+
 	fmt.Printf("ListBucketsSample Run Success!\n\n")
 }

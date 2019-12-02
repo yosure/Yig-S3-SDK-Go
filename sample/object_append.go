@@ -9,6 +9,7 @@ import (
 
 func AppendObjectSample() {
 	DeleteTestBucketAndObject()
+	defer DeleteTestBucketAndObject()
 	sc := s3lib.NewS3(endpoint, accessKey, secretKey)
 	// Create a bucket
 	err := sc.MakeBucket(bucketName)
@@ -35,6 +36,6 @@ func AppendObjectSample() {
 	// TODO 3. Get Next Append Position
 
 	// TODO 4. Append With ACL And Meta
-	DeleteTestBucketAndObject()
+
 	fmt.Printf("AppendObjectSample Run Success !\n\n")
 }

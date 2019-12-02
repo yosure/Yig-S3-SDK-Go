@@ -7,6 +7,8 @@ import (
 
 func BucketACLSample() {
 	DeleteTestBucketAndObject()
+	defer DeleteTestBucketAndObject()
+
 	sc := s3lib.NewS3(endpoint, accessKey, secretKey)
 	err := sc.MakeBucket(bucketName)
 	if err != nil {
@@ -21,6 +23,5 @@ func BucketACLSample() {
 	}
 	fmt.Println("Get Bucket ACL:", out)
 
-	DeleteTestBucketAndObject()
 	fmt.Printf("BucketACLSample Run Success!\n\n")
 }

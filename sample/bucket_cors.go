@@ -9,7 +9,7 @@ import (
 
 func BucketCORSSample() {
 	DeleteTestBucketAndObject()
-
+	defer DeleteTestBucketAndObject()
 	sc := s3lib.NewS3(endpoint, accessKey, secretKey)
 	err := sc.MakeBucket(bucketName)
 	if err != nil {
@@ -21,7 +21,7 @@ func BucketCORSSample() {
 		AllowedMethods: []*string{aws.String("PUT"), aws.String("GET"), aws.String("POST")},
 		AllowedHeaders: []*string{},
 		ExposeHeaders:  []*string{},
-		MaxAgeSeconds: aws.Int64(100),
+		MaxAgeSeconds:  aws.Int64(100),
 	}
 
 	rule2 := &s3.CORSRule{
@@ -29,7 +29,7 @@ func BucketCORSSample() {
 		AllowedMethods: []*string{aws.String("GET")},
 		AllowedHeaders: []*string{aws.String("Authorization")},
 		ExposeHeaders:  []*string{aws.String("x-amz-test"), aws.String("x-amz-test1")},
-		MaxAgeSeconds: aws.Int64(100),
+		MaxAgeSeconds:  aws.Int64(100),
 	}
 
 	err = sc.SetBucketCORS(bucketName, []*s3.CORSRule{rule1})
@@ -65,8 +65,5 @@ func BucketCORSSample() {
 	}
 	fmt.Println(out)
 
-
-
-	DeleteTestBucketAndObject()
 	fmt.Printf("BucketCORSSample Run Success !\n\n")
 }

@@ -9,6 +9,7 @@ import (
 
 func PutObjectSample() {
 	DeleteTestBucketAndObject()
+	defer DeleteTestBucketAndObject()
 	sc := s3lib.NewS3(endpoint, accessKey, secretKey)
 	// Create a bucket
 	err := sc.MakeBucket(bucketName)
@@ -43,6 +44,6 @@ func PutObjectSample() {
 	}
 
 	out.Close()
-	DeleteTestBucketAndObject()
+
 	fmt.Printf("NewObjectSample Run Success !\n\n")
 }

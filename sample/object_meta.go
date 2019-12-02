@@ -5,6 +5,8 @@ import "fmt"
 func ObjectMetaSample() {
 	DeleteTestBucketAndObject()
 
-	DeleteTestBucketAndObject()
+	defer DeleteTestBucketAndObject()
+
+	// TODO: Set Custom Meta
 	fmt.Printf("ObjectMetaSample Run Success !\n\n")
 }

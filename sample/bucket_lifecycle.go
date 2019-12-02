@@ -4,9 +4,9 @@ import "fmt"
 
 func BucketLifecycleSample() {
 	DeleteTestBucketAndObject()
-
+	defer DeleteTestBucketAndObject()
 	// TODO: Support LC ID
 
-	DeleteTestBucketAndObject()
+
 	fmt.Printf("BucketLifecycleSample Run Success !\n\n")
 }

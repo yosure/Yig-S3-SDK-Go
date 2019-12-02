@@ -6,8 +6,10 @@ import (
 )
 
 func MakeBucketSample() {
-	sc := s3lib.NewS3(endpoint, accessKey, secretKey)
 	DeleteTestBucketAndObject()
+	defer DeleteTestBucketAndObject()
+
+	sc := s3lib.NewS3(endpoint, accessKey, secretKey)
 	// Create a bucket
 	err := sc.MakeBucket(bucketName)
 	if err != nil {

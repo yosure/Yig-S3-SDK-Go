@@ -8,6 +8,7 @@ import (
 
 func DeleteObjectSample() {
 	DeleteTestBucketAndObject()
+	defer DeleteTestBucketAndObject()
 	// Delete single key
 	sc := s3lib.NewS3(endpoint, accessKey, secretKey)
 	// Create a bucket
@@ -45,8 +46,5 @@ func DeleteObjectSample() {
 	}
 
 
-
-
-	DeleteTestBucketAndObject()
 	fmt.Printf("DeleteObjectSample Run Success !\n\n")
 }

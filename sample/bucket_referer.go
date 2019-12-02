@@ -7,6 +7,7 @@ import (
 
 func BucketRefererSample() {
 	DeleteTestBucketAndObject()
+	defer DeleteTestBucketAndObject()
 	sc := s3lib.NewS3(endpoint, accessKey, secretKey)
 	err := sc.MakeBucket(bucketName)
 	if err != nil {
@@ -33,6 +34,5 @@ func BucketRefererSample() {
 	r2, err := sc.GetReferer(bucketName)
 	fmt.Println(r2)
 
-	DeleteTestBucketAndObject()
 	fmt.Printf("BucketRefererSample Run Success !\n\n")
 }
