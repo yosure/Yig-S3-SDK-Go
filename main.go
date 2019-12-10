@@ -9,12 +9,12 @@ func main() {
 	// Read S3 config
 	sample.ReadConfig()
 
-	//sample.MakeBucketSample()
-	//sample.ListBucketsSample()
-	//sample.BucketACLSample()
-	//sample.BucketLifecycleSample()
-	//sample.BucketRefererSample()
-	//sample.BucketLoggingSample()
+	sample.MakeBucketSample()
+	sample.ListBucketsSample()
+	sample.BucketACLSample()
+	sample.BucketLifecycleSample()
+	sample.BucketRefererSample()
+	sample.BucketLoggingSample()
 	//sample.BucketCORSSample()
 	//
 	//sample.PutObjectSample()
