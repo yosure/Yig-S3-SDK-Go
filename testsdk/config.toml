@@ -1,0 +1,7 @@
+[s3]
+endpoint   = "https://oss-cn-north-1.unicloudsrv.com"
+accessKey  = "zAlESzJWnKzQPLMW"
+secretKey  = "e76HUKfiJs7BDJM0lGnixkZw5gvMz1"
+bucketName = "go-sdk-test"
+objectKey = "go-sdk-key"
+localFilePath = "./L.jpeg"
